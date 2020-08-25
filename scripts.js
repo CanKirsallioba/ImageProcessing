@@ -27,11 +27,17 @@ function greyFilter () {
     greyImage.drawTo(canvas);
 }
 
+function makeItGrey() {
+    if (greyImage != null) {
+        greyFilter();
+    }
+}
+
 function printOriginalImage(image) {
     image.drawTo(canvas);
 }
 
-function makeRed() {
+function makeItRed() {
     for(var pixel of redImage.values()) {
         var originalPixel = originalImage.getPixel(pixel.getX(), pixel.getY());
         redImage.setPixel(pixel.getX(), pixel.getY(), originalPixel)
@@ -51,3 +57,8 @@ function makeRed() {
     redImage.drawTo(canvas);
 }
 
+function resetImage() {
+    var context = canvas.getContext("2d");
+    context.clearRect(0,0,canvas.width,canvas.height);
+    printOriginalImage(originalImage);
+}
