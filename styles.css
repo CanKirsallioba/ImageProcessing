@@ -1,5 +1,5 @@
 body {
-    background: aliceblue;
+    background: darkcyan;
     font-family: Monospaced;
     font-size: 18px;
     color: black;
@@ -7,7 +7,7 @@ body {
 
 #canvas {
     border: 1px solid;
-    width: 300px;
+    width: 1000px;
 }
 
 input {
@@ -16,7 +16,7 @@ input {
 }
 
 input:not([type="file"]) {
-    background: #969ed4;
+    background: lime;
     border: 0;
     padding: 8px 20px;
     cursor: pointer;
