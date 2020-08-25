@@ -1,10 +1,28 @@
+<!--Programmer: Can Kirsallioba-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Image Processor</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-<body>
 
+<body>
+    <h1>Image Processor by Can Kırşallıoba</h1>
+    <canvas id="canvas"></canvas>
+    <h2 class="nomarginbottom">Choose one of the filter options</h2>
+    <div class="filters">
+        <input id="redButton" type="button" value="Red Filter" onclick="makeItRed()">
+        <input id="rainbowButton" type="button" value="Rainbow Filter" onclick="makeItRainbow()">
+        <input id="greyButton" type="button" value="Grey Filter" onclick="makeItGrey()">
+    </div>
+    <h2 class="nomarginbottom">Reset Image To Original</h2>
+    <input id="resetButton" type="button" value="Reset Image" onclick="resetImage()">
+
+<!--- Importing the SimpleImage library from Duke University --->
+
+<script src="https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js"></script>
+<script src="scripts.js"></script>
 </body>
 </html>
