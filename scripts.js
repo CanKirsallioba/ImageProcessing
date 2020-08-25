@@ -6,6 +6,7 @@ var canvas = document.getElementById("canvas"),
 
 function loadImage() {
     var file = document.getElementById("file");
+    originalImage = new SimpleImage(file);
     greyImage = new SimpleImage(file);
     redImage = new SimpleImage(file);
     rainbowImage = new SimpleImage(file);
@@ -63,7 +64,7 @@ function makeItRainbow() {
         var originalPixel = originalImage.getPixel(pixel.getX(), pixel.getY());
         rainbowImage.setPixel(pixel.getX(), pixel.getY(), originalPixel)
     }
-    
+
     for(var pixel of rainbowImage.values()) {
         var average = (pixel.getRed() + pixel.getGreen() + pixel.getBlue()) / 3;
 
