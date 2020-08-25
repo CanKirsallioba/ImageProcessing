@@ -26,3 +26,28 @@ function greyFilter () {
     }
     greyImage.drawTo(canvas);
 }
+
+function printOriginalImage(image) {
+    image.drawTo(canvas);
+}
+
+function makeRed() {
+    for(var pixel of redImage.values()) {
+        var originalPixel = originalImage.getPixel(pixel.getX(), pixel.getY());
+        redImage.setPixel(pixel.getX(), pixel.getY(), originalPixel)
+    }
+
+    for (var pixel of redImage.values()) {
+        var average = (pixel.getRed() + pixel.getGreen() + pixel.getBlue()) / 3;
+        if(average < 128) {
+            pixel.setRed(average * 2 - 255);
+            pixel.setBlue(average * 2 - 255);
+        } else {
+            pixel.setRed(255);
+            pixel.setGreen(average * 2 - 255);
+            pixel.setBlue(average * 2 - 255);
+        }
+    }
+    redImage.drawTo(canvas);
+}
+
